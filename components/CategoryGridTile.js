@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { Platform, StyleSheet, Text } from 'react-native';
 import { Pressable } from 'react-native';
 import { View } from 'react-native';
 
@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 4,
     backgroundColor: 'white',
-    overflow: 'hidden',
+    overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
     // ios
-    // shadowColor: 'black',
-    // shadowOpacity: 0.25,
-    // shadowOffset: { width: 0, height: 2 },
-    // shadowRadius: 8,
+    shadowColor: 'black',
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
   },
   button: { flex: 1 },
   buttonPressed: { opacity: 0.5 },
